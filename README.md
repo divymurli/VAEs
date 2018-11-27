@@ -1,52 +1,12 @@
-# CS236-HW2
+# Variational Autoencoders and Ladder Variational Autoencoders
 
-Programming assignment.
+This repo contains implementations of a basic variational autoencoder (VAE), a gaussian mixture VAE (GMVAE) and a ladder VAE (LVAE), all implemented in PyTorch 0.4. The former two were done as part of a homework assignment for CS 236 at Stanford University, and the last one is an extension of this starter code to ladder variational autoencoders described in https://arxiv.org/abs/1602.02282. The LVAE implemented here is a two-layer latent model with latent layers of dimensions defaulted at 64 and 32 respectively, and the model outputs (trained on MNIST) after one, six and sixteen epochs can be found in `lvae_outputs/`.
 
-Feel free to explore all of the files. The only ones you will need to modify are
+1. To train the LVAE, run `python train_lvae2.py --epoch_max (num_epochs)`. 
+1. To train the VAE, run `python run_vae.py`.
+1. To train the GMVAE, run `python run_gmvae.py`.
 
-1. `codebase/utils.py`
-1. `codebase/models/vae.py`
-1. `codebase/models/gmvae.py`
-1. `codebase/models/ssvae.py`
-1. `codebase/models/fsvae.py` (bonus)
-
-Do not modify the other files. All default hyperparameters have been prepared
-for you, so please do not change them. If you choose to do the programming
-assignment from scratch, please copy the hyperparameters faithfully so that your
-results are comparable to what we'd expect.
-
-The models can take a while to run on CPU, so please prepare accordingly. On a
-2018 Macbook Pro, it takes ~5 minutes each to run `vae.py` and `gmvae.py`. It
-takes ~50 minutes to run `ssvae.py`. It will take a very long time to run
-`fsvae.py` to completion; we recommend stopping training the moment your samples
-look somewhat decent (maybe around `50000` iterations). Note that we periodically
-save models for you.
-
-You are also free to create new files or jupyter notebooks to assist in
-answering any of the written assignment questions. For image generation, you
-will find the following functions helpful:
-
-1. `codebase.utils.load_model_by_name` (for loading a model. See example usage in `run_vae.py`)
-1. The sampling functionalities in `vae.py`/`gmvae.py`/`ssvae.py`/`fsvae.py`
-1. `numpy.swapaxes` and/or `torch.permute` (for tiling images when represented as numpy arrays)
-1. `matplotlib.pyplot.imshow` (for generating an image from numpy array)
-
-When you introduce new files, do not include them in the codebase.
-
-The following is a checklist of various functions you need to implement in the
-codebase, in chronological order:
-
-1. `sample_gaussian` in `utils.py`
-1. `negative_elbo_bound` in `vae.py`
-1. `log_normal` in `utils.py`
-1. `log_normal_mixture` in `utils.py`
-1. `negative_elbo_bound` in `gmvae.py`
-1. `negative_iwae_bound` in `vae.py`
-1. `negative_iwae_bound` in `gmvae.py`
-1. `negative_elbo_bound` in `ssvae.py`
-1. `negative_elbo_bound` in `fsvae.py` (bonus)
-
-Once you've completed the assignment, run the `make_submission.sh` script and upload `hw2.zip`.
+Jupyter notebooks have been provided with sample visualisations for VAE, GMVAE and LVAE (for the last one, see `lvae_outputs/` as stated above). 
 
 ---
 
