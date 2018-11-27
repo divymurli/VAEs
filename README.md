@@ -6,7 +6,7 @@ This repo contains implementations of a basic variational autoencoder (VAE), a g
 1. To train the VAE, run `python run_vae.py`.
 1. To train the GMVAE, run `python run_gmvae.py`.
 
-Jupyter notebooks have been provided with sample visualisations for VAE, GMVAE and LVAE (for the last one, see `lvae_outputs/` as stated above). The models to train the LVAE are in `codebase/nns/v3.py`, where a two-layer multilayer perceptron is implemented as in https://github.com/casperkaae/LVAE/blob/master/run_models.py. The warmup training scheme is used, and the implementation is taken from https://github.com/wohlert/semi-supervised-pytorch/blob/master/semi-supervised/inference/variational.py.
+Jupyter notebooks have been provided with sample visualisations for VAE, GMVAE and LVAE (for the last one, see `lvae_outputs/` as stated above). The models to train the LVAE are in `codebase/models/nns/v3.py`, where a two-layer multilayer perceptron is implemented as in https://github.com/casperkaae/LVAE/blob/master/run_models.py. The warmup training scheme is used, and the implementation is taken from https://github.com/wohlert/semi-supervised-pytorch/blob/master/semi-supervised/inference/variational.py.
 
 ---
 
