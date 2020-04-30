@@ -27,7 +27,7 @@ def train(model, train_loader, labeled_subset, device, tqdm, writer,
 					beta += 0.02
 				#print(beta)
 				if y_status == 'none':
-					xu = torch.bmernoulli(xu.to(device).reshape(xu.size(0), -1))
+					xu = torch.bernoulli(xu.to(device).reshape(xu.size(0), -1))
 					yu = yu.new(np.eye(10)[yu]).to(device).float()
 					loss, summaries = model.loss(xu, beta)
 					#print(beta)
